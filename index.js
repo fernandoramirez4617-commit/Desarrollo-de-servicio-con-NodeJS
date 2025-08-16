@@ -2,10 +2,8 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-// Middleware para interpretar JSON
 app.use(express.json());
 
-// Rutas básicas con distintos métodos HTTP
 app.get("/", (req, res) => {
   res.send("Tarea 1 Primer servicio web");
 });
@@ -26,7 +24,6 @@ app.delete("/usuario/:id", (req, res) => {
   res.json({ mensaje: `Usuario con id ${id} eliminado` });
 });
 
-// Levantar servidor
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
